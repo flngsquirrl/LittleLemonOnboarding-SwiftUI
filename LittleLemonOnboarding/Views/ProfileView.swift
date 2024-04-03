@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(UserContext.self) private var userContext
+    
     var body: some View {
-        Text("Profile")
+        if userContext.isUserRegistered {
+            Form {
+                Text("User: \(userContext.user!.firstName)");
+                Button("Change name") {
+                    userContext.user = User.sampleAnna
+                }
+                Button("Logout") {
+                    userContext.reset()
+                }
+            }
+        }
     }
 }
 
 #Preview {
     ProfileView()
+        .environment(UserContext.sampleContextRegistered)
 }

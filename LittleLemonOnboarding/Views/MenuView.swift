@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct MenuView: View {
+    @Environment(UserContext.self) private var userContext
+
     var body: some View {
-        Text("Menu")
+        if userContext.isUserRegistered {
+            Text("User: \(userContext.user!.firstName)");
+        }
     }
 }
 
 #Preview {
     MenuView()
+        .environment(UserContext.sampleContextRegistered)
 }

@@ -28,5 +28,6 @@ struct LittleLemonOnboardingApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .environment(UserContext())
     }
 }

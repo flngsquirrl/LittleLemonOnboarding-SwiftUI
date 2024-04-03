@@ -9,18 +9,23 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [MenuItem]
+    @Environment(UserContext.self) private var userContext
 
     var body: some View {
-        TabView {
-            MenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
-            ProfileView().tabItem { Label("Profile", systemImage: "person.circle") }
+        if !userContext.isLoaded {
+            SplashView()
+        } else if userContext.isUserRegistered {
+            TabView {
+                MenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
+                ProfileView().tabItem { Label("Profile", systemImage: "person.circle") }
+            }
+        } else {
+            OnboardingView()
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: MenuItem.self, inMemory: true)
+        .environment(UserContext.sampleContextNotRegistered)
 }
