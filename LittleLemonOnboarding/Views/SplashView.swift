@@ -12,10 +12,12 @@ struct SplashView: View {
     private static var onscreenTime: UInt64 = 1_000_000_000
 
     var body: some View {
-        Text("LittleLemon")
+        Image("Logo")
+            .resizable()
+            .scaledToFit()
             .onAppear() {
                 Task {
-                    try? await Task.sleep(nanoseconds: SplashView.onscreenTime)
+                    try await Task.sleep(nanoseconds: SplashView.onscreenTime)
                     await userContext.loadUser()
                 }
             }
@@ -24,4 +26,5 @@ struct SplashView: View {
 
 #Preview {
     SplashView()
+        .environment(UserContext.sampleContextRegistered)
 }
