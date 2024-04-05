@@ -16,7 +16,7 @@ struct ContentView: View {
             SplashView()
         } else if userContext.isUserRegistered {
             TabView {
-                MenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
+                FilterableMenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
                 ProfileView().tabItem { Label("Profile", systemImage: "person.circle") }
             }
         } else {

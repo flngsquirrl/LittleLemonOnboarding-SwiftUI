@@ -5,19 +5,48 @@
 //  Created by flngsquirrl on 02/04/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct MenuView: View {
-    @Environment(UserContext.self) private var userContext
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \MenuItem.id) var menuItems: [MenuItem]
+
+    init(filter: Filter) {
+        let sortDescriptor = SortDescriptor(\MenuItem.id)
+        let titleFilter = filter.title
+        let categoriesFilter = filter.categories.map{ $0.rawValue }
+
+        var filterDescriptor: Predicate<MenuItem>? = nil
+        if !titleFilter.isEmpty || !categoriesFilter.isEmpty {
+            filterDescriptor = #Predicate<MenuItem> { item in
+                if !titleFilter.isEmpty && !categoriesFilter.isEmpty {
+                    return item.title.localizedStandardContains(titleFilter)
+                    && categoriesFilter.contains(item.category)
+                } else if categoriesFilter.isEmpty {
+                    return item.title.localizedStandardContains(titleFilter)
+                } else {
+                    return categoriesFilter.contains(item.category)
+                }
+            }
+            _menuItems = Query(filter: filterDescriptor, sort: [sortDescriptor])
+        }
+    }
 
     var body: some View {
-        if userContext.isUserRegistered {
-            Text("User: \(userContext.user!.firstName)");
-        }
+        MenuListView(menuItems: menuItems)
     }
 }
 
 #Preview {
-    MenuView()
-        .environment(UserContext.sampleContextRegistered)
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: MenuItem.self, configurations: config)
+        container.mainContext.insert(MenuItem.greekSalad)
+        container.mainContext.insert(MenuItem.lemonDessert)
+        return MenuView(filter: Filter.sampleFilterLemonDesserts)
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create container: \(error.localizedDescription)")
+    }
 }
