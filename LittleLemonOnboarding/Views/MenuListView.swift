@@ -13,7 +13,9 @@ struct MenuListView: View {
     var body: some View {
         List(menuItems, id: \.id) { item in
             MenuItemView(menuItem: item)
+
         }
+        .listStyle(.plain)
     }
 }
 
