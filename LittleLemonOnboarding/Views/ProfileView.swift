@@ -18,7 +18,7 @@ struct ProfileView: View {
                     userContext.user = User.sampleAnna
                 }
                 Button("Logout") {
-                    userContext.reset()
+                    userContext.resetUser()
                 }
             }
         }
