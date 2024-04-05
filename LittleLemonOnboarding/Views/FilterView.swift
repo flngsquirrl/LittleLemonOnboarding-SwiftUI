@@ -10,7 +10,7 @@ struct FilterView: View {
     @Binding var filter: Filter
 
     var body: some View {
-        TextField("Search...", text: $filter.title)
+        TextField("Search...", text: $filter.title.animation())
     }
 }
 
