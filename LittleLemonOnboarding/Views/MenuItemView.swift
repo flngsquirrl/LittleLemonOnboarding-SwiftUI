@@ -10,21 +10,27 @@ struct MenuItemView: View {
     var menuItem: MenuItem
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(menuItem.title)
-                    .fontWeight(.bold)
-                Text(menuItem.about)
-                Text(String(menuItem.price))
-                Text(menuItem.category)
+        GeometryReader { metrics in
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(menuItem.title)
+                        .fontWeight(.bold)
+                    Text(menuItem.about)
+                    Text(String(menuItem.price))
+                    Text(menuItem.category)
+                }
+                Spacer()
+                Image(systemName: "carrot")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: metrics.size.width * 0.2)
             }
-            Spacer()
-            Image(systemName: "carrot")
-                .dynamicTypeSize(.xxxLarge)
         }
     }
 }
 
 #Preview {
     MenuItemView(menuItem: MenuItem.greekSalad)
+        .background(Color.blue)
+        .frame(height: 100)
 }
