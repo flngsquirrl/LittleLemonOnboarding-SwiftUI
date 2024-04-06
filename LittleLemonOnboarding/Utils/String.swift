@@ -16,7 +16,7 @@ extension String {
     }
 
     func isEmail() -> Bool {
-        return String.emailValidationPredicate.evaluate(with: self)
+        return Self.emailValidationPredicate.evaluate(with: self)
     }
 
     func isNotEmpty() -> Bool {
