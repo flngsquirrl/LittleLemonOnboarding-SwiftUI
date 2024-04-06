@@ -23,7 +23,7 @@ class UserContext {
         category: String(describing: UserContext.self)
     )
 
-    func loadUser() async {
+    func loadUser() {
         if let savedUser = UserDefaults.standard.data(forKey: User.storageKey) {
             let decoder = JSONDecoder()
             do {
@@ -34,20 +34,19 @@ class UserContext {
         }
     }
 
-    func saveUser(_ user: User) async {
+    func saveUser(_ user: User) {
         let encoder = JSONEncoder()
         do {
             let encoded = try encoder.encode(user)
             UserDefaults.standard.set(encoded, forKey: User.storageKey)
-            withAnimation {
-                self.user = user
-            }
+            self.user = user
         } catch {
             Self.logger.error("Failed to encode user before saving: \(error)")
         }
     }
 
     func resetUser() {
+        UserDefaults.standard.removeObject(forKey: User.storageKey)
         self.user = nil
     }
 }

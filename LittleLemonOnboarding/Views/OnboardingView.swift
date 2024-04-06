@@ -14,15 +14,14 @@ struct OnboardingView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Little Lemon")
-                .font(.title)
+            HeroView()
             Form {
                 Section("Let us know you") {
                     UserDataView(user: $user)
                 }
                 Button("Register") {
-                    Task {
-                        await userContext.saveUser(user)
+                    withAnimation {
+                        userContext.saveUser(user)
                     }
                 }
                 .disabled(!UserUtils.isUserDataValid(user))
