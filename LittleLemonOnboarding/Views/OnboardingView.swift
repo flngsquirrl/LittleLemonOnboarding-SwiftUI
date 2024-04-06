@@ -17,7 +17,7 @@ struct OnboardingView: View {
             Text("Little Lemon")
                 .font(.title)
             Form {
-                Section("User information") {
+                Section("Let us know you") {
                     TextField("First name", text: $user.firstName)
                     TextField("Last name", text: $user.lastName)
                     TextField("Email", text: $user.email)
@@ -28,6 +28,7 @@ struct OnboardingView: View {
                         await userContext.registerUser(user)
                     }
                 }
+                .disabled(!UserUtils.isUserDataValid(user))
                 .frame(maxWidth: .infinity)
             }
         }
@@ -36,4 +37,5 @@ struct OnboardingView: View {
 
 #Preview {
     OnboardingView()
+        .environment(UserContext.sampleContextNotRegistered)
 }
