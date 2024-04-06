@@ -8,26 +8,35 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @Environment(UserContext.self) private var userContext
-    
+    @State private var user = User.emptyUser
+
+    private var initialUser: User
+    private var onChange: (User) -> Void
+    private var onLogout: () -> Void
+
+    init(user: User, onChange: @escaping (User) -> Void, onLogout: @escaping () -> Void) {
+        _user = State(initialValue: user)
+        self.initialUser = user
+        self.onChange = onChange
+        self.onLogout = onLogout
+    }
+
     var body: some View {
-        if userContext.isUserRegistered {
-            Form {
-                Text("User: \(userContext.user!.firstName)");
-                Button("Save changes") {
-                    Task {
-                        await userContext.saveUser(User.sampleAnna)
-                    }
-                }
-                Button("Logout") {
-                    userContext.resetUser()
-                }
+        Form {
+            UserDataView(user: $user)
+            Button("Save changes") {
+                onChange(user)
+            }
+            Button("Reset changes") {
+                user = initialUser
+            }
+            Button("Logout") {
+                onLogout()
             }
         }
     }
 }
 
 #Preview {
-    ProfileView()
-        .environment(UserContext.sampleContextRegistered)
+    ProfileView(user: User.sampleAnna, onChange: { _ in }, onLogout: {})
 }

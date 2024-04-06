@@ -18,10 +18,7 @@ struct OnboardingView: View {
                 .font(.title)
             Form {
                 Section("Let us know you") {
-                    TextField("First name", text: $user.firstName)
-                    TextField("Last name", text: $user.lastName)
-                    TextField("Email", text: $user.email)
-                        .keyboardType(.emailAddress)
+                    UserDataView(user: $user)
                 }
                 Button("Register") {
                     Task {

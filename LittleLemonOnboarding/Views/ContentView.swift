@@ -15,11 +15,22 @@ struct ContentView: View {
         if userContext.isUserRegistered {
             TabView {
                 FilterableMenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
-                ProfileView().tabItem { Label("Profile", systemImage: "person.circle") }
+                ProfileView(user: userContext.user!, onChange: saveUser, onLogout: logout).tabItem { Label("Profile", systemImage: "person.circle") }
             }
         } else {
             OnboardingView()
         }
+    }
+
+    func saveUser(user: User) {
+        Task {
+            await userContext.saveUser(user)
+        }
+    }
+
+    @MainActor
+    func logout() {
+        userContext.resetUser()
     }
 }
 
