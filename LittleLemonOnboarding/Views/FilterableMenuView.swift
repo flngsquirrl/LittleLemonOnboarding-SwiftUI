@@ -15,6 +15,7 @@ struct FilterableMenuView: View {
 
     var body: some View {
         VStack{
+            HeroView()
             FilterView(filter: $filter)
                 .disabled(!isLoaded)
             if isLoaded {
