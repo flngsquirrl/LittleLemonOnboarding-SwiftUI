@@ -29,9 +29,7 @@ class UserContext {
     }
 
     func resetUser() {
-        withAnimation {
-            self.user = nil
-        }
+        self.user = nil
     }
 }
 
