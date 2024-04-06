@@ -12,6 +12,8 @@ struct OnboardingView: View {
 
     @State private var user: User = User.emptyUser
 
+    var test: Double = 45
+
     var body: some View {
         VStack(spacing: 0) {
             HeroView()

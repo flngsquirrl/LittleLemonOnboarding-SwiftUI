@@ -10,10 +10,11 @@ import SwiftUI
 
 struct MenuView: View {
     @Environment(\.modelContext) var modelContext
-    @Query(sort: \MenuItem.id) var menuItems: [MenuItem]
+    @Query(sort: [Self.sortDescriptor]) var menuItems: [MenuItem]
+
+    private static var sortDescriptor = SortDescriptor(\MenuItem.title, comparator: .localizedStandard)
 
     init(filter: Filter) {
-        let sortDescriptor = SortDescriptor(\MenuItem.id)
         let titleFilter = filter.title
         let categoriesFilter = filter.categories.map{ $0.rawValue }
 
@@ -29,7 +30,7 @@ struct MenuView: View {
                     return categoriesFilter.contains(item.category)
                 }
             }
-            _menuItems = Query(filter: filterDescriptor, sort: [sortDescriptor])
+            _menuItems = Query(filter: filterDescriptor, sort: [Self.sortDescriptor])
         }
     }
 
