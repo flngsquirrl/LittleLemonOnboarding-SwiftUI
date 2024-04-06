@@ -18,7 +18,6 @@ struct HeroView: View {
             }
             Spacer()
         }
-        .frame(maxWidth: .infinity)
         .padding()
         .background(Color.darkGreen)
     }
