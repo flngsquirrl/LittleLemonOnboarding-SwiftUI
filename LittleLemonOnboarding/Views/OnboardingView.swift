@@ -25,7 +25,7 @@ struct OnboardingView: View {
                 }
                 Button("Register") {
                     Task {
-                        await userContext.registerUser(user)
+                        await userContext.saveUser(user)
                     }
                 }
                 .disabled(!UserUtils.isUserDataValid(user))

@@ -14,8 +14,10 @@ struct ProfileView: View {
         if userContext.isUserRegistered {
             Form {
                 Text("User: \(userContext.user!.firstName)");
-                Button("Change name") {
-                    userContext.user = User.sampleAnna
+                Button("Save changes") {
+                    Task {
+                        await userContext.saveUser(User.sampleAnna)
+                    }
                 }
                 Button("Logout") {
                     userContext.resetUser()

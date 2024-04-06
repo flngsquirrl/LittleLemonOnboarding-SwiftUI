@@ -34,7 +34,7 @@ class UserContext {
         }
     }
 
-    func registerUser(_ user: User) async {
+    func saveUser(_ user: User) async {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(user) {
             UserDefaults.standard.set(encoded, forKey: User.storageKey)
