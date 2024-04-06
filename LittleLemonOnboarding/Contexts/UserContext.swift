@@ -29,20 +29,21 @@ class UserContext {
             do {
                 user = try decoder.decode(User.self, from: savedUser)
             } catch {
-                Self.logger.error("Failed to load user from storage")
+                Self.logger.error("Failed to load user from storage: \(error)")
             }
         }
     }
 
     func saveUser(_ user: User) async {
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(user) {
+        do {
+            let encoded = try encoder.encode(user)
             UserDefaults.standard.set(encoded, forKey: User.storageKey)
             withAnimation {
                 self.user = user
             }
-        } else {
-            Self.logger.error("Failed to encode user before saving")
+        } catch {
+            Self.logger.error("Failed to encode user before saving: \(error)")
         }
     }
 
