@@ -12,7 +12,6 @@ import SwiftUI
 class UserContext {
 
     var user: User?
-    var isLoaded: Bool = false
 
     var isUserRegistered: Bool {
         user != nil
@@ -20,9 +19,6 @@ class UserContext {
 
     func loadUser() async {
         //TODO: read from UserDefaults
-        withAnimation {
-            isLoaded = true
-        }
     }
 
     func registerUser(_ user: User) async {

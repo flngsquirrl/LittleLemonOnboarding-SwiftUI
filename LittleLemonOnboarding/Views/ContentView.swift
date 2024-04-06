@@ -12,9 +12,7 @@ struct ContentView: View {
     @Environment(UserContext.self) private var userContext
 
     var body: some View {
-        if !userContext.isLoaded {
-            SplashView()
-        } else if userContext.isUserRegistered {
+        if userContext.isUserRegistered {
             TabView {
                 FilterableMenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
                 ProfileView().tabItem { Label("Profile", systemImage: "person.circle") }
