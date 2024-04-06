@@ -35,7 +35,7 @@ extension MenuItem {
         lemonDessert,
     ]
 
-    static let greekSalad = MenuUtils.convertToMenuItem(entry: MenuEntry.greekSalad)
-    static let lemonDessert = MenuUtils.convertToMenuItem(entry: MenuEntry.lemonDessert)
+    static let greekSalad = MenuUtils.convertToMenuItem(entry: MenuEntry.greekSalad)!
+    static let lemonDessert = MenuUtils.convertToMenuItem(entry: MenuEntry.lemonDessert)!
 }
 #endif

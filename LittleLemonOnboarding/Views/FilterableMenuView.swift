@@ -25,6 +25,7 @@ struct FilterableMenuView: View {
         }
         .onAppear() {
             Task {
+                //try? modelContext.delete(model: MenuItem.self)
                 let count = (try? modelContext.fetchCount(FetchDescriptor<MenuItem>())) ?? 0
                 if count == 0 {
                     await loadMenuItems()
@@ -45,7 +46,6 @@ struct FilterableMenuView: View {
     do {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: MenuItem.self, configurations: config)
-        //container.mainContext.delete(model: MenuItem.self)
         return FilterableMenuView()
             .modelContainer(container)
     } catch {

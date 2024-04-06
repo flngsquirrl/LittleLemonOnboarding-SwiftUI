@@ -6,11 +6,11 @@
 
 import Foundation
 
-struct MenuEntry {
+struct MenuEntry: Codable {
     let id: Int
     let title: String
     let description: String
-    let price: Double
+    let price: String
     let image: String
     let category: String
 }
@@ -22,7 +22,7 @@ extension MenuEntry {
         lemonDessert,
     ]
 
-    static let greekSalad = MenuEntry(id: 1, title: "Greek Salad", description: "The famous greek salad of crispy lettuce.", price: 10, image: "", category: "starters")
-    static let lemonDessert = MenuEntry(id: 2, title: "Lemon Dessert", description: "Traditional homemade Italian Lemon Ricotta Cake.", price: 20, image: "", category: "desserts")
+    static let greekSalad = MenuEntry(id: 1, title: "Greek Salad", description: "The famous greek salad of crispy lettuce.", price: "10", image: "", category: "starters")
+    static let lemonDessert = MenuEntry(id: 2, title: "Lemon Dessert", description: "Traditional homemade Italian Lemon Ricotta Cake.", price: "20", image: "", category: "desserts")
 }
 #endif
