@@ -7,10 +7,14 @@
 import Foundation
 import SwiftUI
 
-struct User: Codable {
+struct User {
     var firstName: String
     var lastName: String
     var email: String
+}
+
+extension User: UserDefaultsSubject {
+    static var storageKey = "user"
 }
 
 extension User {

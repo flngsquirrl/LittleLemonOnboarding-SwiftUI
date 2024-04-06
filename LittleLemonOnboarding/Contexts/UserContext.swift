@@ -6,6 +6,7 @@
 
 import Foundation
 import SwiftUI
+import os
 
 @MainActor
 @Observable
@@ -17,14 +18,31 @@ class UserContext {
         user != nil
     }
 
+    private static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: UserContext.self)
+    )
+
     func loadUser() async {
-        //TODO: read from UserDefaults
+        if let savedUser = UserDefaults.standard.data(forKey: User.storageKey) {
+            let decoder = JSONDecoder()
+            do {
+                user = try decoder.decode(User.self, from: savedUser)
+            } catch {
+                Self.logger.error("Failed to load user from storage")
+            }
+        }
     }
 
     func registerUser(_ user: User) async {
-        //TODO: save to UserDefaults
-        withAnimation {
-            self.user = user
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(user) {
+            UserDefaults.standard.set(encoded, forKey: User.storageKey)
+            withAnimation {
+                self.user = user
+            }
+        } else {
+            Self.logger.error("Failed to encode user before saving")
         }
     }
 
