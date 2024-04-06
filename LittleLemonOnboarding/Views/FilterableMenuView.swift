@@ -14,7 +14,7 @@ struct FilterableMenuView: View {
     @State private var isLoaded = false
 
     var body: some View {
-        VStack{
+        VStack {
             HeroView()
             FilterView(filter: $filter)
                 .disabled(!isLoaded)
@@ -24,6 +24,7 @@ struct FilterableMenuView: View {
                 ProgressView()
             }
         }
+        .withHeader(title: "Menu")
         .onAppear() {
             Task {
                 //try? modelContext.delete(model: MenuItem.self)

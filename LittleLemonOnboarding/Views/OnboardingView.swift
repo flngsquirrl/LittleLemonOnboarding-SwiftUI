@@ -28,6 +28,7 @@ struct OnboardingView: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .withHeader(title: "Welcome to")
     }
 }
 

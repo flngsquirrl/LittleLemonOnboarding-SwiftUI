@@ -34,6 +34,7 @@ struct ProfileView: View {
                 onLogout()
             }
         }
+        .withHeader(title: "Profile")
     }
 }
 
