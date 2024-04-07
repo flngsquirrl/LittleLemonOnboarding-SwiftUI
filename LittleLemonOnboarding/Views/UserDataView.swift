@@ -12,12 +12,9 @@ struct UserDataView: View {
 
     var body: some View {
         TextField("First name", text: $user.firstName)
-            .autocorrectionDisabled()
         TextField("Last name", text: $user.lastName)
-            .autocorrectionDisabled()
         TextField("Email", text: $user.email)
             .keyboardType(.emailAddress)
-            .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
     }
 }
