@@ -11,10 +11,9 @@ struct FilterView: View {
     @State private var categories = CategoryItem.allCategories
 
     var body: some View {
-        VStack {
-            TextField("Search...", text: $filter.title.animation())
-            CategoriesView(categoryItems: $categories, onChange: updateFilter)
-        }
+        TextField("Search...", text: $filter.title.animation())
+            .textFieldStyle(.roundedBorder)
+        CategoriesView(categoryItems: $categories, onChange: updateFilter)
     }
 
     func updateFilter() {
@@ -26,5 +25,7 @@ struct FilterView: View {
 }
 
 #Preview {
-    FilterView(filter: .constant(Filter()))
+    VStack {
+        FilterView(filter: .constant(Filter()))
+    }
 }

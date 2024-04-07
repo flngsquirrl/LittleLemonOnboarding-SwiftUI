@@ -17,14 +17,12 @@ struct CategoriesView: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            VStack {
-                HStack {
-                    ForEach($categoryItems, id: \.name) { $item in
-                        CategoryView(categoryItem: $item, onChange: onChange)
-                    }
+            HStack {
+                ForEach($categoryItems, id: \.name) { $item in
+                    CategoryView(categoryItem: $item, onChange: onChange)
                 }
             }
-            .padding(2)
+            .padding(1)
         }
     }
 }

@@ -16,10 +16,13 @@ struct FilterableMenuView: View {
     var body: some View {
         VStack(spacing: 0) {
             HeroView()
-            FilterView(filter: $filter)
-                .disabled(!isLoaded)
-                .padding([.trailing, .leading, .bottom])
-            Divider()
+            VStack {
+                FilterView(filter: $filter)
+                    .disabled(!isLoaded)
+                    .padding([.trailing, .leading])
+                Divider()
+            }
+            .background(Color.darkGreen)
             if isLoaded {
                 MenuView(filter: filter)
             } else {

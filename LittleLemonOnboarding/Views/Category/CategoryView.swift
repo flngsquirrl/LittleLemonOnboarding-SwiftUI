@@ -17,11 +17,11 @@ struct CategoryView: View {
 
     var body: some View {
         Text(categoryItem.name)
-            .foregroundStyle(categoryItem.isActive ? .white : .warmOrange)
+            .foregroundStyle(.white)
             .padding(5)
             .background(RoundedRectangle(cornerRadius: 7).fill(
                 Color.warmOrange.opacity(categoryItem.isActive ? 1 : 0))
-                .stroke(Color.warmOrange))
+                .stroke(categoryItem.isActive ? Color.warmOrange : Color.white))
             .onTapGesture {
                 categoryItem.isActive.toggle()
                 onChange()
@@ -42,4 +42,6 @@ struct CategoryView: View {
         PreviewContainerView(categoryItem: CategoryItem.sampleMainActive)
         PreviewContainerView(categoryItem: CategoryItem.sampleDessertsInactive)
     }
+    .padding()
+    .background(Color.darkGreen)
 }
