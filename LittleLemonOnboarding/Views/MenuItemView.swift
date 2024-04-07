@@ -27,6 +27,8 @@ struct MenuItemView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.gray))
 
         }
     }
@@ -37,6 +39,6 @@ struct MenuItemView: View {
 }
 
 #Preview {
-    MenuItemView(menuItem: MenuItem.greekSalad)
-        .background(Color.blue)
+    MenuItemView(menuItem: MenuItem.lemonDessert)
+        .border(Color.black)
 }
