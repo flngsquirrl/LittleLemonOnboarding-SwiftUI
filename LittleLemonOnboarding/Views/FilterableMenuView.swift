@@ -39,7 +39,9 @@ struct FilterableMenuView: View {
                 if count == 0 {
                     await loadMenuItems()
                 }
-                isLoaded = true
+                withAnimation {
+                    isLoaded = true
+                }
             }
         }
     }
