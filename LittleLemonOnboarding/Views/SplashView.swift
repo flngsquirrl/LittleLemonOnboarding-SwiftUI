@@ -28,6 +28,9 @@ struct SplashView: View {
                 }
         } else {
             ContentView()
+                .onAppear() {
+                    UITextField.appearance().clearButtonMode = .whileEditing
+                }
         }
     }
 }
