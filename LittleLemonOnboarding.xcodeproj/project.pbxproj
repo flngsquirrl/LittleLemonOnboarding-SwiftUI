@@ -24,6 +24,7 @@
 		C96F210D2BC1A83700BE43D6 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F210C2BC1A83700BE43D6 /* UserDataView.swift */; };
 		C96F21112BC1B18500BE43D6 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21102BC1B18500BE43D6 /* HeroView.swift */; };
 		C96F21142BC1E7B100BE43D6 /* View-Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21132BC1E7B100BE43D6 /* View-Header.swift */; };
+		C96F21192BC2D3F900BE43D6 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21182BC2D3F900BE43D6 /* Hero.swift */; };
 		C9A216AD2BBD8A3D008F398A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A216AC2BBD8A3D008F398A /* User.swift */; };
 		C9A216B02BBD9E39008F398A /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A216AF2BBD9E39008F398A /* UserContext.swift */; };
 		C9A216B22BBDA9D5008F398A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A216B12BBDA9D5008F398A /* SplashView.swift */; };
@@ -54,6 +55,7 @@
 		C96F210C2BC1A83700BE43D6 /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
 		C96F21102BC1B18500BE43D6 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
 		C96F21132BC1E7B100BE43D6 /* View-Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Header.swift"; sourceTree = "<group>"; };
+		C96F21182BC2D3F900BE43D6 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		C9A216AC2BBD8A3D008F398A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C9A216AF2BBD9E39008F398A /* UserContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserContext.swift; sourceTree = "<group>"; };
 		C9A216B12BBDA9D5008F398A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				C9A216AC2BBD8A3D008F398A /* User.swift */,
 				C91E50ED2BC0600D00A58561 /* Filter.swift */,
 				C91E50EF2BC0603500A58561 /* MenuCategory.swift */,
+				C96F21182BC2D3F900BE43D6 /* Hero.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				C91E50F42BC0784700A58561 /* FilterView.swift in Sources */,
 				C91BBE162BBD7D15003C6C3A /* MenuItem.swift in Sources */,
 				C9CB94BA2BBC999F007DB3D0 /* ContentView.swift in Sources */,
+				C96F21192BC2D3F900BE43D6 /* Hero.swift in Sources */,
 				C91E50E72BC0500600A58561 /* MenuUtils.swift in Sources */,
 				C9A216AD2BBD8A3D008F398A /* User.swift in Sources */,
 				C9CB94C92BBC9E58007DB3D0 /* OnboardingView.swift in Sources */,
