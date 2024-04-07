@@ -20,7 +20,7 @@ struct SplashView: View {
                 .onAppear() {
                     Task {
                         try await Task.sleep(nanoseconds: SplashView.onscreenTime)
-                        await userContext.loadUser()
+                        userContext.loadUser()
                         withAnimation {
                             isLoading = false
                         }
