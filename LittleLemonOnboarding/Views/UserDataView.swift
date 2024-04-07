@@ -11,9 +11,9 @@ struct UserDataView: View {
     @Binding var user: User
 
     var body: some View {
-        TextField("First name", text: $user.firstName)
-        TextField("Last name", text: $user.lastName)
-        TextField("Email", text: $user.email)
+        TextField("First name", text: $user.firstName.animation())
+        TextField("Last name", text: $user.lastName.animation())
+        TextField("Email", text: $user.email.animation())
             .keyboardType(.emailAddress)
             .textInputAutocapitalization(.never)
     }

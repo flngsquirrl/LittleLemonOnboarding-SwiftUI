@@ -37,9 +37,11 @@ struct ProfileView: View {
                     Button("Save changes") {
                         onChange(user)
                     }
+                    .disabled(!hasChanges())
                     Button("Reset changes", role: .cancel) {
                         user = initialUser
                     }
+                    .disabled(!hasChanges())
                 }
             }
         }
@@ -53,6 +55,12 @@ struct ProfileView: View {
             }
         }
         .withHeader(title: "Profile")
+    }
+
+    func hasChanges() -> Bool {
+        return !String.areEqual(user.firstName, initialUser.firstName)
+        || !String.areEqual(user.lastName, initialUser.lastName)
+        || !String.areEqual(user.email, initialUser.email)
     }
 }
 

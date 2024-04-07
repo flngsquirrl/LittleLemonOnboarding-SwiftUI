@@ -22,4 +22,8 @@ extension String {
     func isNotEmpty() -> Bool {
         return !self.trim().isEmpty
     }
+
+    static func areEqual(_ string1: String, _ string2: String) -> Bool {
+        return string1.trim() == string2.trim()
+    }
 }
