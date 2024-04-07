@@ -26,7 +26,9 @@ struct FilterableMenuView: View {
             if isLoaded {
                 MenuView(filter: filter)
             } else {
+                Spacer()
                 ProgressView()
+                Spacer()
             }
         }
         .withHeader(title: "Menu")

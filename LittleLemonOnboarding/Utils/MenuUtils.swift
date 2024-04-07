@@ -32,4 +32,10 @@ class MenuUtils {
         return MenuItem(id: entry.id, title: entry.title, about: entry.description, price: price, image: entry.image, category: entry.category)
     }
 
+    static func getImageSaveURL(for menuEntry: MenuEntry) -> URL {
+        let fileName = "\(menuEntry.id).jpg"
+        let result = FileManager.documentsDirectory.appendingPathComponent(fileName)
+        logger.trace("Image save path: \(result)")
+        return result
+    }
 }

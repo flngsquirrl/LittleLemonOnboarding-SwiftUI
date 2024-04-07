@@ -22,14 +22,10 @@ struct MenuItemView: View {
                 Text(formatPrice(menuItem.price))
             }
             Spacer()
-            Image(systemName: "carrot")
+            Image(menuItem: menuItem)
                 .resizable()
-                .scaledToFit()
-                .containerRelativeFrame(.horizontal) { size, axis in
-                    size * 0.2
-                }
-                .padding()
-                .border(Color.black, width: 2)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
                 .cornerRadius(10)
 
         }
