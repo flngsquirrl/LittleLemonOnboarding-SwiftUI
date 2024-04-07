@@ -18,8 +18,10 @@ struct OnboardingView: View {
         VStack(spacing: 0) {
             HeroView()
             Form {
-                Section("Let us know you") {
+                Section {
                     UserDataView(user: $user)
+                } footer: {
+                    Text("Please, enter your personal information and register to see the menu")
                 }
                 Button("Register") {
                     withAnimation {
@@ -30,7 +32,7 @@ struct OnboardingView: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .withHeader(title: "Welcome to")
+        .withHeader(title: "Welcome")
     }
 }
 
