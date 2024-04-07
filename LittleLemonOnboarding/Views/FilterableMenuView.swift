@@ -14,10 +14,12 @@ struct FilterableMenuView: View {
     @State private var isLoaded = false
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HeroView()
             FilterView(filter: $filter)
                 .disabled(!isLoaded)
+                .padding([.trailing, .leading, .bottom])
+            Divider()
             if isLoaded {
                 MenuView(filter: filter)
             } else {
