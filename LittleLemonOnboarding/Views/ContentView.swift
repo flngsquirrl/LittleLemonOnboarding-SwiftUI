@@ -18,7 +18,9 @@ struct ContentView: View {
         if userContext.isUserRegistered {
             TabView {
                 FilterableMenuView().tabItem { Label("Menu", systemImage: "list.bullet.rectangle") }
+                    .toolbarBackground(.visible, for: .tabBar)
                 ProfileView(user: userContext.user!, onChange: saveUser, onLogout: logout).tabItem { Label("Profile", systemImage: "person.circle") }
+                    .toolbarBackground(.visible, for: .tabBar)
             }
             .transition(Self.tabTransition)
         } else {
