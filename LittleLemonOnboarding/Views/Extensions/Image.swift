@@ -15,7 +15,7 @@ extension Image {
         if Self.blackImageIds.contains(menuItem.id) {
             self.init(resource: "\(menuItem.id)", ofType: "jpg")
         } else {
-            self.init(uiImage: UIImage(contentsOfFile: imagePath.path()) ?? UIImage(systemName: "photo")!)
+            self.init(uiImage: UIImage(contentsOfFile: imagePath.path()) ?? UIImage(systemName: "fork.knife")!)
         }
     }
 
@@ -32,6 +32,7 @@ extension Image {
 #Preview {
     Image(resource: "22", ofType: "jpg")
         .resizable()
-        .aspectRatio(contentMode: .fill)
-        .frame(width: 100, height: 100)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 50, height: 50)
+        .background(Color.warmOrange)
 }
