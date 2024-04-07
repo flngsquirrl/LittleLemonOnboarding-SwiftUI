@@ -22,16 +22,24 @@ struct ProfileView: View {
     }
 
     var body: some View {
-        Form {
-            Section {
-                UserDataView(user: $user)
-            }
-            Section {
-                Button("Save changes") {
-                    onChange(user)
+        VStack(spacing: 0) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .padding()
+                .fontWeight(.thin)
+            Form {
+                Section {
+                    UserDataView(user: $user)
                 }
-                Button("Reset changes", role: .cancel) {
-                    user = initialUser
+                Section {
+                    Button("Save changes") {
+                        onChange(user)
+                    }
+                    Button("Reset changes", role: .cancel) {
+                        user = initialUser
+                    }
                 }
             }
         }
