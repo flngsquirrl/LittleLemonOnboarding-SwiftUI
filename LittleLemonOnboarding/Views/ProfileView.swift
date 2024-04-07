@@ -23,15 +23,25 @@ struct ProfileView: View {
 
     var body: some View {
         Form {
-            UserDataView(user: $user)
-            Button("Save changes") {
-                onChange(user)
+            Section {
+                UserDataView(user: $user)
             }
-            Button("Reset changes") {
-                user = initialUser
+            Section {
+                Button("Save changes") {
+                    onChange(user)
+                }
+                Button("Reset changes", role: .cancel) {
+                    user = initialUser
+                }
             }
-            Button("Logout") {
-                onLogout()
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button(role: .destructive) {
+                    onLogout()
+                } label: {
+                    Label("Logout", systemImage: "rectangle.portrait.and.arrow.forward")
+                }
             }
         }
         .withHeader(title: "Profile")
