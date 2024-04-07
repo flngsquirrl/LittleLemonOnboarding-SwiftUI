@@ -37,7 +37,7 @@ struct ProfileView: View {
                     Button("Save changes") {
                         onChange(user)
                     }
-                    .disabled(!hasChanges())
+                    .disabled(!hasChanges() || !UserUtils.isUserDataValid(user))
                     Button("Reset changes", role: .cancel) {
                         user = initialUser
                     }
