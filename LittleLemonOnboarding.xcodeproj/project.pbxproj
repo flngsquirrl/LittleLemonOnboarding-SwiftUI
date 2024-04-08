@@ -17,6 +17,13 @@
 		C91E50F02BC0603500A58561 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E50EF2BC0603500A58561 /* MenuCategory.swift */; };
 		C91E50F22BC0618B00A58561 /* FilterableMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E50F12BC0618B00A58561 /* FilterableMenuView.swift */; };
 		C91E50F42BC0784700A58561 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91E50F32BC0784700A58561 /* FilterView.swift */; };
+		C91F8DC32BC40CE40001292C /* lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DC22BC40CE40001292C /* lemon.png */; };
+		C91F8DCB2BC411080001292C /* onboarding-initial.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DC62BC411080001292C /* onboarding-initial.png */; };
+		C91F8DCE2BC411080001292C /* menu-initial.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DC92BC411080001292C /* menu-initial.png */; };
+		C91F8DCF2BC411080001292C /* menu-filtered.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DCA2BC411080001292C /* menu-filtered.png */; };
+		C91F8DD32BC413AD0001292C /* onboarding-filled.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DD22BC413AD0001292C /* onboarding-filled.png */; };
+		C91F8DD52BC413DA0001292C /* splash-screen.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DD42BC413DA0001292C /* splash-screen.png */; };
+		C91F8DD72BC413ED0001292C /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = C91F8DD62BC413ED0001292C /* profile.png */; };
 		C96F21022BC177F400BE43D6 /* UserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21012BC177F400BE43D6 /* UserUtils.swift */; };
 		C96F21042BC1792B00BE43D6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21032BC1792B00BE43D6 /* String.swift */; };
 		C96F21072BC1852000BE43D6 /* UserDefaultsSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96F21062BC1852000BE43D6 /* UserDefaultsSubject.swift */; };
@@ -59,6 +66,13 @@
 		C91E50EF2BC0603500A58561 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 		C91E50F12BC0618B00A58561 /* FilterableMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterableMenuView.swift; sourceTree = "<group>"; };
 		C91E50F32BC0784700A58561 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		C91F8DC22BC40CE40001292C /* lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lemon.png; sourceTree = "<group>"; };
+		C91F8DC62BC411080001292C /* onboarding-initial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "onboarding-initial.png"; sourceTree = "<group>"; };
+		C91F8DC92BC411080001292C /* menu-initial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-initial.png"; sourceTree = "<group>"; };
+		C91F8DCA2BC411080001292C /* menu-filtered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-filtered.png"; sourceTree = "<group>"; };
+		C91F8DD22BC413AD0001292C /* onboarding-filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "onboarding-filled.png"; sourceTree = "<group>"; };
+		C91F8DD42BC413DA0001292C /* splash-screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-screen.png"; sourceTree = "<group>"; };
+		C91F8DD62BC413ED0001292C /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		C96F21012BC177F400BE43D6 /* UserUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserUtils.swift; sourceTree = "<group>"; };
 		C96F21032BC1792B00BE43D6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C96F21062BC1852000BE43D6 /* UserDefaultsSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSubject.swift; sourceTree = "<group>"; };
@@ -129,6 +143,19 @@
 				C96F21362BC3388C00BE43D6 /* FileManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C91F8DC52BC410FC0001292C /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				C91F8DC62BC411080001292C /* onboarding-initial.png */,
+				C91F8DD22BC413AD0001292C /* onboarding-filled.png */,
+				C91F8DD42BC413DA0001292C /* splash-screen.png */,
+				C91F8DCA2BC411080001292C /* menu-filtered.png */,
+				C91F8DC92BC411080001292C /* menu-initial.png */,
+				C91F8DD62BC413ED0001292C /* profile.png */,
+			);
+			path = screens;
 			sourceTree = "<group>";
 		};
 		C96F21052BC184F100BE43D6 /* Storage */ = {
@@ -227,6 +254,7 @@
 		C9CB94B62BBC999F007DB3D0 /* LittleLemonOnboarding */ = {
 			isa = PBXGroup;
 			children = (
+				C9EBBA4B2BC40C59000ED9B0 /* Development Assets */,
 				C96F211E2BC2E06600BE43D6 /* Info.plist */,
 				C96F211A2BC2E00D00BE43D6 /* Resources */,
 				C91E50EC2BC05FF700A58561 /* Utils */,
@@ -284,6 +312,23 @@
 				C96F21182BC2D3F900BE43D6 /* Hero.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C9EBBA4B2BC40C59000ED9B0 /* Development Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C9EBBA4C2BC40C68000ED9B0 /* readme */,
+			);
+			path = "Development Assets";
+			sourceTree = "<group>";
+		};
+		C9EBBA4C2BC40C68000ED9B0 /* readme */ = {
+			isa = PBXGroup;
+			children = (
+				C91F8DC52BC410FC0001292C /* screens */,
+				C91F8DC22BC40CE40001292C /* lemon.png */,
+			);
+			path = readme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,10 +389,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C91F8DD72BC413ED0001292C /* profile.png in Resources */,
 				C96F21342BC32EB800BE43D6 /* 3.jpg in Resources */,
+				C91F8DCF2BC411080001292C /* menu-filtered.png in Resources */,
 				C9CB94C12BBC99A2007DB3D0 /* Preview Assets.xcassets in Resources */,
 				C9CB94BE2BBC99A2007DB3D0 /* Assets.xcassets in Resources */,
+				C91F8DCE2BC411080001292C /* menu-initial.png in Resources */,
 				C96F21232BC2E2D900BE43D6 /* MarkaziText-Regular.ttf in Resources */,
+				C91F8DD32BC413AD0001292C /* onboarding-filled.png in Resources */,
+				C91F8DD52BC413DA0001292C /* splash-screen.png in Resources */,
+				C91F8DCB2BC411080001292C /* onboarding-initial.png in Resources */,
+				C91F8DC32BC40CE40001292C /* lemon.png in Resources */,
 				C96F21352BC32EB800BE43D6 /* 2.jpg in Resources */,
 				C96F21222BC2E2D700BE43D6 /* Karla-Regular.ttf in Resources */,
 			);
@@ -525,7 +577,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LittleLemonOnboarding/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "LittleLemonOnboarding/Development\\ Assets LittleLemonOnboarding/Preview\\ Content";
 				DEVELOPMENT_TEAM = 755WLDCD84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -556,7 +608,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LittleLemonOnboarding/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "LittleLemonOnboarding/Development\\ Assets LittleLemonOnboarding/Preview\\ Content";
 				DEVELOPMENT_TEAM = 755WLDCD84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
