@@ -14,7 +14,7 @@ struct SplashView: View {
 
     var body: some View {
         if isLoading {
-            Image("Logo")
+            Image("splashLogo")
                 .resizable()
                 .scaledToFit()
                 .onAppear() {
