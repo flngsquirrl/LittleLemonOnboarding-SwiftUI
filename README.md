@@ -6,7 +6,7 @@
 Capstone project for Meta iOS Developer Professional Certificate on Coursera.
 
 ## Wireframes
-[Wireframes for this prject](/LittleLemonOnboarding/Development%20Assets/wireframes/wireframes.png) were created with Figma.
+[Wireframes for this project](/LittleLemonOnboarding/Development%20Assets/wireframes/wireframes.png) were created with Figma.
 
 ## Screens (Simulator: iPhone 15 Pro, iOS 17.0)
 <details>
